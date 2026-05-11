@@ -44,11 +44,11 @@ pgAdmin at `http://localhost:5050` (admin@jobtracker.local / admin)
 curl -X POST http://localhost:8080/api/v1/applications \
   -H "Content-Type: application/json" \
   -d '{
-    "company": "Grab",
-    "role": "Backend Engineer",
+    "company": "COMPANY NAME",
+    "role": "ROLE",
     "appliedAt": "2026-05-01",
-    "location": "Kuala Lumpur, Malaysia",
-    "jobUrl": "https://grab.careers/...",
+    "location": "LOCATION",
+    "jobUrl": "https://LINK/...",
     "salaryMin": 6000,
     "salaryMax": 9000,
     "notes": "Referral from LinkedIn"
@@ -59,12 +59,12 @@ Response:
 ```json
 {
   "id": 1,
-  "company": "Grab",
-  "role": "Backend Engineer",
+  "company": "COMPANY NAME",
+  "role": "ROLE",
   "status": "APPLIED",
   "appliedAt": "2026-05-01",
   "updatedAt": "2026-05-01T10:23:45",
-  "location": "Kuala Lumpur, Malaysia",
+  "location": "LOCATION",
   "salaryMin": 6000,
   "salaryMax": 9000,
   "staleFlag": false,
@@ -87,7 +87,7 @@ curl -X PATCH http://localhost:8080/api/v1/applications/1/status \
 curl "http://localhost:8080/api/v1/applications?status=APPLIED"
 
 # Applications from a specific company
-curl "http://localhost:8080/api/v1/applications?company=grab"
+curl "http://localhost:8080/api/v1/applications?company=COMPANY_NAME"
 
 # Stale applications (no response in 14 days)
 curl "http://localhost:8080/api/v1/applications?stale=true"
